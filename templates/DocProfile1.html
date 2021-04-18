@@ -1,0 +1,15 @@
+{% extends "HomePage.html" %}
+{% block main %}
+
+
+    <p><a class="btn btn-primary" href="{{ url_for('ReservationRequestFormPage') }}" role="button">Send an Operating Room Reservation Request</a></p>
+    <p><a class="btn btn-primary" href="{{ url_for('Cancellation') }}" role="button">Cancel an Operation Room Request</a></p>
+    <p><a class="btn btn-primary" href="{{ url_for('PendingRequestedOperations') }}" role="button">View List of Pending Requests you sent</a></p>
+    <p><a class="btn btn-primary" href="{{ url_for('ConfirmedRequestedOperations') }}" role="button">View List of Confirmed Requests you sent</a></p>
+    <p><a class="btn btn-primary" href="{{ url_for('viewcancelled') }}" role="button">View List of Cancelled Requests you sent</a></p>
+    <p><a class="btn btn-primary" href="{{ url_for('ConfirmedAssistingOperations') }}" role="button">View List of Confirmed Operations you assist in</a></p>
+
+    <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button">Log Out</a>
+
+
+{% endblock %}    

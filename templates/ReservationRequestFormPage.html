@@ -1,0 +1,204 @@
+{% extends "DocProfile.html" %}
+
+
+    <h1>Complete The Reservation Form</h1>
+
+    <div class="container">
+        {% block main %}
+    <form class="row g-3" action="{{ url_for('ReservationRequestFormPage') }}", method="POST">
+
+        <div class="col-md-6">
+            <label for="OperationType" class="form-label">Operation Type:</label>
+            <input type="text" class="form-control" id="OperationType" name = "OperationType">
+        </div>
+
+        <div class="col-md-6">
+            <label for="LeadingDoctorID" class="form-label">Leading/Requesting Doctor ID:</label>
+            <input type="text" class="form-control" id="OperationType" name = "LeadingDoctorID">
+        </div>
+      <div class="form-group">
+          <div class="row">
+        <div class="col-md-4">
+            <label for="OperationDay" class="form-label">Day</label>
+            <select id="OperationDay" class="form-select" name = "OperationDay">
+              <option selected>Select Day..</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+              <option>19</option>
+              <option>20</option>
+              <option>21</option>
+              <option>22</option>
+              <option>23</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+            </select>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="OperationMonth" class="form-label">Month</label>
+            <select id="OperationMonth" class="form-select" name = "OperationMonth">
+              <option selected>Select Month..</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label for="OperationYear" class="form-label">Year</label>
+            <select id="OperationYear" class="form-select" name = "OperationYear">
+              <option selected>Select Year..</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option>2026</option>
+              <option>2027</option>
+              <option>2028</option>
+              <option>2029</option>
+              <option>2030</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="OperationLevel" class="form-label">Operation Level</label>
+            <select id="OperationLevel" class="form-select" name = "OperationLevel">
+              <option selected>Select Level..</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label for="EstimatedHours" class="form-label">Operation Estimated Hours</label>
+            <select id="EstimatedHours" class="form-select" name = "EstimatedHours">
+              <option selected>Select Estimated Number of Hours..</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+              <option>13</option>
+              <option>14</option>
+              <option>15</option>
+              <option>16</option>
+              <option>17</option>
+              <option>18</option>
+            </select>
+        </div>
+        </div>
+       </div>
+        <div class="col-md-6">
+            <label for="PatientFirstName" class="form-label">Patient's First Name</label>
+            <input type="text" class="form-control" id="PatientFirstName" name = "PatientFirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-6">
+            <label for="PatientLastName" class="form-label">Patient's Last Name</label>
+            <input type="text" class="form-control" id="PatientLastName" name = "PatientLastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc1FirstName" class="form-label">Assisting Doctor 1's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc1FirstName" name = "AssistingDoc1FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc1LastName" class="form-label">Assisting Doctor 1's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc1LastName" name = "AssistingDoc1LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc2FirstName" class="form-label">Assisting Doctor 2's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc2FirstName" name = "AssistingDoc2FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc2LastName" class="form-label">Assisting Doctor 2's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc2LastName" name = "AssistingDoc2LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc3FirstName" class="form-label">Assisting Doctor 3's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc3FirstName" name = "AssistingDoc3FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc3LastName" class="form-label">Assisting Doctor 3's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc3LastName" name = "AssistingDoc3LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc4FirstName" class="form-label">Assisting Doctor 4's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc4FirstName" name = "AssistingDoc4FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc4LastName" class="form-label">Assisting Doctor 4's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc4LastName" name = "AssistingDoc4LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc5FirstName" class="form-label">Assisting Doctor 5's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc5FirstName" name = "AssistingDoc5FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc5LastName" class="form-label">Assisting Doctor 5's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc5LastName" name = "AssistingDoc5LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-md-3">
+            <label for="AssistingDoc6FirstName" class="form-label">Assisting Doctor 6's First Name</label>
+            <input type="text" class="form-control" id="AssistingDoc6FirstName" name = "AssistingDoc6FirstName" placeholder="First Name">
+        </div>
+        <div class="col-md-3">
+            <label for="AssistingDoc6LastName" class="form-label">Assisting Doctor 6's Last Name</label>
+            <input type="text" class="form-control" id="AssistingDoc6LastName" name = "AssistingDoc6LastName" placeholder="Last Name">
+        </div>
+
+        <div class="col-20">
+        <button type="submit" class="btn btn-primary btn-lg">Send Request</button>
+        </div>
+
+      </form>
+
+    </div>
+
+    <a href="{{ url_for('DocProfile') }}">Back To Your Page</a>
+
+{% endblock %}    

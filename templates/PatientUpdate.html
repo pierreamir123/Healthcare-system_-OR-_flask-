@@ -1,0 +1,66 @@
+{% extends "PatientProfile.html" %}
+{% block main %}
+    {% for data in result %}
+    <h1>Hello, {{data.0}}!</h1>
+
+    <form action="{{ url_for('PatientUpdate') }}", method="POST">
+        <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{data.0}}</span><span class="text-black-50">{{data.1}}</span><span> </span></div>
+            </div>
+            <div class="col-md-7 border-right">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                                        
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" name="Patusername" value="{{data.0}}" > </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" name="PatFname" value="{{data.3}}"  ></div>
+                        <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" name="PatLname" value="{{data.4}}" ></div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="number" class="form-control" name="PatMobile" value="{{data.10}}"  ></div>
+                        <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" name="Pataddress" value="{{data.12}}" ></div>
+                        <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" name="Patemail" value="{{data.11}}" ></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Nationality</label><input type="text" class="form-control" name="Patnationality" value="{{data.6}}"  ></div>
+                        <div class="col-md-6"><label class="labels">Gender</label><input type="text" class="form-control" name="PatGender" value="{{data.5}}"  ></div>
+                        </div>
+                    <div class="row mt-3">
+                        <div class="col-md-4"><label class="labels">Day</label><input type="number" class="form-control" name="PatDay" value="{{data.7}}" ></div>
+                        <div class="col-md-4"><label class="labels">Month</label><input type="number" class="form-control" name="PatMonth" value="{{data.8}}" ></div>
+                        <div class="col-md-4"><label class="labels">Year</label><input type="number" class="form-control" name="PatYear" value="{{data.9}}" ></div>                    
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Weight</label><input type="number" class="form-control" name="Weight" value="{{data.13}}"  ></div>
+                        <div class="col-md-6"><label class="labels">Height</label><input type="number" class="form-control" name="Height" value="{{data.14}}"  ></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Chronic Diseases</label><input type="text" class="form-control" name="ChronicDiseases" value="{{data.15}}"  ></div>
+                        <div class="col-md-6"><label class="labels">Allergies</label><input type="text" class="form-control" name="Allergies" value="{{data.16}}"  ></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Previous Operations</label><input type="text" name="PreviousOperations" class="form-control" value="{{data.17}}" ></div>                   
+                     </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Password</label><input type="password" name="Patpsw" class="form-control" value="{{data.2}}" ></div>                   
+                     </div>
+                     <div class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                        <a class="btn btn-primary" href="{{ url_for('Patinfo') }}" role="button">Cancel</a>
+                      </div>   
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    </form>
+    {% endfor %} 
+
+{% endblock %} 

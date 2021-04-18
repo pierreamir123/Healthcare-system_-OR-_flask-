@@ -1,0 +1,50 @@
+{% extends "PatientProfile.html" %}
+{% block main %}
+
+    <h1>Your Operations</h1>
+
+    <div class="container">
+
+    <table class="table">
+
+        <thead class="table-light"> 
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
+              <th scope="col">Day</th>
+              <th scope="col">Month</th>
+              <th scope="col">Year</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">End Time</th>
+              <th scope="col">Operation Room</th>
+              <th scope="col">Leading Doctor Name</th>
+            </tr>
+        </thead>
+
+          <tbody>
+
+            {% for Operation in OperationsList %}
+
+            <tr>
+              <th scope="row">{{Operation.0}}</th>
+              <td>{{Operation.1}}</td>
+              <td>{{Operation.2}}</td>
+              <td>{{Operation.3}}</td>
+              <td>{{Operation.4}}</td>
+              <td>{{Operation.5}}</td>
+              <td>{{Operation.6}}</td>
+              <td>{{Operation.7}}</td>
+              <td>Dr. {{Operation.8}} {{Operation.9}}</td>
+            </tr>
+
+            {% endfor %}
+            
+          </tbody>
+
+    </table>
+
+    </div>
+
+    <a href="{{ url_for('PatientProfile') }}">Back To Your Page</a>
+
+{% endblock %}    

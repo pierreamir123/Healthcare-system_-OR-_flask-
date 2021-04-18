@@ -1,0 +1,26 @@
+{% extends "AdminProfile.html"%}
+        {% block main%}
+          <h1>Doctor Analysis</h1>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Doctor ID </th>
+                    <th scope="col"> count</th>
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for data in result%}
+                    <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{data.0}}</td>
+                    <td>{{data.1}}</td>
+
+    
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+  {% endblock %}

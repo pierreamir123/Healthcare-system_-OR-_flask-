@@ -1,0 +1,143 @@
+<!-- <!DOCTYPE html>
+<html>
+   <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
+    <!-- <script type="text/javascript" src="js/HTMLtable2chart/graficarBarras.js"></script>
+    <script type="text/javascript" src="js/HTMLtable2chart/tabla2array.js"></script>
+      <title>Chart</title>
+   </head>
+
+   <body>
+       <h1>Doctor Analysis</h1>
+       <table class="table" id="dataTable"> -->
+        {% extends "AdminProfile.html"%}
+        {% block main%}
+          <h1>operations analysis</h1>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">type </th>
+                    <th scope="col"> count</th>
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for data in result%}
+                    <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{data.0}}</td>
+                    <td>{{data.1}}</td>
+
+    
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        {% endblock %}
+              <!-- <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
+                {% for data in result%}
+                <div class="h-{{((data.1)/3)*100}} d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
+                {% endfor %} -->
+                <!-- <div class="h- d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
+                <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
+                <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+                <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto</div> -->
+              <!-- </div> -->
+             
+      <!-- <canvas id="chart" width="750" height="480" style="border: 1px solid black;">Canvas is not supported</canvas>  --> -->
+      <!-- <div class="chart">
+      <canvas id="myChart"></canvas>
+      
+      </div> -->
+
+    <!-- <script>
+            function BuildChart(labels, values, chartTitle) {
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels, // Our labels
+                datasets: [{
+                    label: chartTitle, // Name the series
+                    data: values, // Our values
+                    backgroundColor: [ // Specify custom colors
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [ // Add custom color borders
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1 // Specify bar border width
+                }]
+            },
+            options: {
+                responsive: true, // Instruct chart js to respond nicely.
+                maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height 
+            }
+        });
+        return myChart;
+    }
+
+
+    // HTML To JSON Script 
+    // *Forked* from https://johndyer.name/html-table-to-json/
+    var table = document.getElementById('dataTable');
+    var json = []; // first row needs to be headers 
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /gi, '');
+    }
+    // go through cells 
+    for (var i = 1; i < table.rows.length; i++) {
+        var tableRow = table.rows[i];
+        var rowData = {};
+        for (var j = 0; j < tableRow.cells.length; j++) {
+            rowData[headers[j]] = tableRow.cells[j].innerHTML;
+        }
+        json.push(rowData);
+    }
+    console.log(json);
+    // Map json values back to label array
+    var labels = json.map(function (e) {
+        return e.year;
+    });
+    console.log(labels);
+    // Map json values back to values array
+    var values = json.map(function (e) {
+        return e.itemssold;
+    });
+    console.log(values);
+    var chart = BuildChart(labels, values, "number of succeeded operations");
+
+    </script> -->
+    <!-- <script type="text/javascript">
+        var misParam ={
+            miMargen : 0.80,
+            separZonas : 0.05,
+            tituloGraf : "Title of Chart",
+            tituloEjeX : "Country",
+            tituloEjeY : "Backlog Count",
+            nLineasDiv : 10,
+            mysColores :[
+                            ["rgba(93,18,18,1)","rgba(196,19,24,1)"],  //red
+                            ["rgba(171,115,51,1)","rgba(251,163,1,1)"], //yellow
+                        ],
+            anchoLinea : 2,
+        };
+    
+        obtener_datos_tabla_convertir_en_array('tableConten',graficarBarras,'chart','750','480',misParam,true);
+    </script>
+</body>
+</html> 
+  --> 

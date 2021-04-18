@@ -1,0 +1,18 @@
+{% extends "HomePage.html"%}
+        {% block main%}
+        <form action="{{ url_for('login') }}" method="post">
+            <div class="container">
+            <label for="userID"><b>User ID</b></label>
+            <input type="number" placeholder="Enter User ID" name="userID" required>
+        
+            <label for="userpsw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="userpsw" required>
+        
+            <button type="submit">Log in</button>
+            </div>
+            
+                <div class="container" style="background-color:#f1f1f1">
+                    <a class="btn btn-primary" href="{{ url_for('HomePage') }}" role="button">Cancel</a>
+                </div>
+            </form>
+{% endblock %}

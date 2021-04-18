@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>OR Department</title>
+
+  </head>
+
+  <body>
+
+    {% block main %}
+
+
+    <a class="btn btn-primary" href="{{ url_for('ViewReservationRequests') }}" role="button">View Operation Room Reservation Requests</a>
+    <a class="btn btn-primary" href="{{ url_for('ViewConfirmedOperations') }}" role="button">View List of Confirmed Operations</a>
+    <a class="btn btn-primary" href="{{ url_for('OperationsEndingStatus') }}" role="button">Enter Ending Status of Operation</a>
+    <a class="btn btn-primary" href="{{ url_for('doctoranalysis') }}" role="button">Statistics of Success of Doctors</a>
+    <a class="btn btn-primary" href="{{ url_for('operationsanalysis') }}" role="button">Statistics of Success of Operations</a>
+
+  
+
+    <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button">Log Out</a>
+
+    {% endblock %}
+
+  </body>
+
+</html>

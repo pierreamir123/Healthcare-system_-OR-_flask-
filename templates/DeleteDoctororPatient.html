@@ -1,0 +1,111 @@
+{% extends "AdminProfile.html" %}
+{% block main %}
+
+    <h1>Delete Doctor or Patient</h1>
+
+    <div class="container">
+       
+        <div class="row align-items-center">
+
+          <div class="col">
+            
+            <table class="table">
+
+                <thead class="table-light"> 
+                    <tr>
+                      <th scope="col">Doctor ID</th>
+                      <th scope="col">Doctor First Name</th>
+                      <th scope="col">Doctor Last Name</th>
+                      <th scope="col">Doctor Mobile</th>
+                      <th scope="col">Doctor Email</th>
+                    </tr>
+                </thead>
+        
+                  <tbody>
+        
+                    {% for Doctor in Doctors %}
+        
+                    <tr>
+                      <th scope="row">{{Doctor.0}}</th>
+                      <td>{{Doctor.1}}</td>
+                      <td>{{Doctor.2}}</td>
+                      <td>{{Doctor.3}}</td>
+                      <td>{{Doctor.4}}</td>
+                    </tr>
+        
+                    {% endfor %}
+                    
+                  </tbody>
+        
+            </table>
+
+            <form class="row g-3" action="{{ url_for('ViewDeleteDoctorResult') }}", method="POST">
+                <div class="col-auto">
+                   <label for="ID" class="form-label">Enter ID of Doctor You want to delete</label>
+                </div>
+                <div class="col-auto">
+                  <label for="DoctorID" class="visually-hidden"></label>
+                  <input type="number" class="form-control" id="DoctorID" placeholder="Doctor ID" name = "DoctorID">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3">Delete</button>
+                </div>
+            </form>        
+
+          </div>
+
+          <div class="col">
+            
+            <table class="table">
+
+                <thead class="table-light"> 
+                    <tr>
+                      <th scope="col">Patient ID</th>
+                      <th scope="col">Patient First Name</th>
+                      <th scope="col">Patient Last Name</th>
+                      <th scope="col">Patient Mobile</th>
+                      <th scope="col">Patient Email</th>
+                    </tr>
+                </thead>
+        
+                  <tbody>
+
+                    {% for Patient in Patients %}
+        
+                    <tr>
+                      <th scope="row">{{Patient.0}}</th>
+                      <td>{{Patient.1}}</td>
+                      <td>{{Patient.2}}</td>
+                      <td>{{Patient.3}}</td>
+                      <td>{{Patient.4}}</td>
+                    </tr>
+        
+                    {% endfor %}
+                    
+
+                </tbody>
+        
+            </table>
+
+            <form class="row g-3" action="{{ url_for('ViewDeletePatientResult') }}", method="POST">
+                <div class="col-auto">
+                   <label for="ID" class="form-label">Enter ID of Patient You want to delete</label>
+                </div>
+                <div class="col-auto">
+                  <label for="PatientID" class="visually-hidden"></label>
+                  <input type="number" class="form-control" id="PatientID" placeholder="Patient ID" name = "PatientID">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3">Delete</button>
+                </div>
+            </form>        
+
+          </div>
+
+        </div>
+        
+      </div>
+
+    <p><a href="{{ url_for('AdminProfile') }}">Back To Your Page</a></p>
+
+{% endblock %}

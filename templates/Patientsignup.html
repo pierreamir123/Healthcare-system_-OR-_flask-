@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="../static/login/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../static/login/css/style.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="../static/login/images/APImages_ProPublica_DrJoiner_01-960_1440-a909dd.jpg" alt="">
+                </div>
+                <div class="signup-form">
+                   
+					<form action="{{ url_for('Patientsignup') }}", method="POST" class="register-form" id="register-form">
+                         <h2>REGISTER FORM</h2>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+							  <label for="Firstname">First Name</label>
+							  <input type="text" name="PatFname" class="form-control" id="Firstname" placeholder="First Name">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="Lastname">Last Name</label>
+							  <input type="text" name="PatLname" class="form-control" id="Lastname" placeholder="Last Name">
+							</div>
+						  </div>
+						  <div class="form-row">
+							<div class="form-group col-md-6">
+							  <label for="Username"> Username</label>
+							  <input type="text" name="Patusername" class="form-control" id="Username" placeholder="Username">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="ID">ID</label>
+							  <input type="number" name="PatID" class="form-control" id="ID" placeholder=" ID ">
+							</div>
+						  </div>
+						<div class="form-row">
+						  <div class="form-group col-md-6">
+							<label for="inputEmail4">Email</label>
+							<input type="email" name="Patemail" class="form-control" id="inputEmail4" placeholder="Email">
+						  </div>
+						  <div class="form-group col-md-6">
+							<label for="inputPassword4">Password</label>
+							<input type="password" name="Patpsw" class="form-control" id="inputPassword4" placeholder="Password">
+						  </div>
+						</div>
+						<div class="form-group">
+						  <label for="inputAddress">Address</label>
+						  <input type="text" name="Pataddress" class="form-control" id="inputAddress" placeholder="1234 Main St">
+						</div>
+						<div class="form-group">
+							<label for="Mobile">Mobile</label>
+							<input type="number" name="PatMobile" class="form-control" id="Mobile" placeholder="01XXXXXXXX">
+						  </div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+							  <label for="Nationality">Nationality</label>
+							  <input type="text" name="Patnationality" class="form-control" id="Nationality" placeholder="Nationality">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="inputState">Gender</label>
+							  <select id="inputState" class="form-control" name="PatGender">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							  </select>
+							</div>
+						  </div>
+						<div class="form-row">
+						  <div class="form-group col-md-4">
+							<label for="day">Day</label>
+							<input type="number" name="PatDay" class="form-control" id="day" placeholder="1">
+						  </div>
+						  <div class="form-group col-md-4">
+							<label for="Month">Month</label>
+							<input type="number" name="PatMonth" class="form-control" id="Month" placeholder="2">
+						  </div>
+						  <div class="form-group col-md-4">
+							<label for="year">Year</label>
+							<input type="number" name="PatYear" class="form-control" id="year" placeholder="1900">
+						  </div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+							  <label for="Weight">Weight</label>
+							  <input type="number" name="Weight" class="form-control" id="Weight" placeholder="Weight">
+							</div>
+							<div class="form-group col-md-6">
+							  <label for="Height">Height</label>
+							  <input type="number" name="Height" class="form-control" id="Height" placeholder="Height">
+							</div>
+						  </div>
+						  <div class="form-group col-md-6">
+							<label for="ChronicDiseases">Chronic Diseases</label>
+							<input type="text" name="ChronicDiseases" class="form-control" id="ChronicDiseases" placeholder="ChronicDiseases">
+						  </div>
+						  <div class="form-group col-md-6">
+							<label for="Allergies">Allergies</label>
+							<input type="text" name="Allergies" class="form-control" id="Allergies" placeholder="Allergies">
+						  </div>
+						  <div class="form-group">
+							<label for="PreviousOperations">Previous Operations</label>
+							<input type="text" name="PreviousOperations" class="form-control" id="PreviousOperations" placeholder="PreviousOperations">
+						  </div>
+						  <div class="col-20">
+							<button type="submit" class="submit" style="background-color:#178acc">Submit</button>
+						  </div>
+					</form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../static/login/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/login/js/main.js"></script>
+</body>
+
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

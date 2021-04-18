@@ -1,0 +1,45 @@
+{% extends "AdminProfile.html" %}
+
+{% block main %}
+
+    <h1>Delete Patient Result..</h1>
+
+    {% if success %}
+
+    <div class="container">
+       
+    <div class="card">
+        <h5 class="card-header">Success!</h5>
+        <div class="card-body">
+          <h5 class="card-title">Message:</h5>
+          <p class="text-success">Chosen Patient was successfully deleted!</p>
+          <p class="text-success">You can delete more.</p>
+          <a href="{{ url_for('DeleteDoctororPatient') }}" class="btn btn-primary">Back To Deleting Doctors or Patients</a>
+          <a href="{{ url_for('AdminProfile') }}" class="btn btn-primary">Back To Your Page</a>
+        </div>
+      </div>
+      
+    </div>
+
+    {% endif %}
+
+    {% if error %}
+
+    <div class="container">
+       
+        <div class="card">
+            <h5 class="card-header">Failure!</h5>
+            <div class="card-body">
+              <h5 class="card-title">Message:</h5>
+              <p class="text-danger">You may have entered an invalid Patient ID..</p>
+              <p class="text-danger">Please Try Again!</p>
+              <a href="{{ url_for('DeleteDoctororPatient') }}" class="btn btn-primary">Try Again</a>
+              <a href="{{ url_for('AdminProfile') }}" class="btn btn-primary">Back To Your Page</a>
+            </div>
+          </div>
+          
+        </div>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "AdminProfile.html" %}
+{% block main %}
+
+    <h1>Entering Status of Operations</h1>
+
+    <div class="container">
+
+    <form class="row g-3" action="{{ url_for('OperationsEndingStatus') }}", method="POST">
+
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="number" class="form-control" id="OperationID" name ="OperationID" placeholder="ID">
+            <label for="floatingInputGrid">Enter Operation ID</label>
+          </div>
+        </div>
+
+        <div class="col-md">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelectGrid" name="OperationEndingStatus" aria-label="Floating label select example">
+              <option selected>Select Ending Status</option>
+              <option>Success</option>
+              <option>Failure</option>
+            </select>
+            <label for="floatingSelectGrid">Operation Ending Status</label>
+          </div>
+        </div>
+
+        <div class="col-md">
+            <button type="submit" class="btn btn-primary btn-lg">Confirm</button>
+          </div>
+
+        </form>
+
+        {% if SuccessMsg %}
+        <p>  </p>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Success!</h4>
+            <p>{{ SuccessMsg }}</p>
+            <hr>
+            <p class="mb-0">You can enter more.</p>
+        </div>
+        {% endif %}
+
+        {% if FailureMsg %}
+        <p>  </p>
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Failure!</h4>
+            <p>{{ FailureMsg }}</p>
+            <hr>
+            <p class="mb-0">Please try again.</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <a href="{{ url_for('AdminProfile') }}">Back To Your Page</a>
+
+{% endblock %}    

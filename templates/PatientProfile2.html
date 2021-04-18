@@ -1,0 +1,9 @@
+{% extends "HomePage.html" %}
+{% block main %}
+
+
+    <p><a class="btn btn-primary" href="{{ url_for('ViewYourOperations') }}" role="button">View Your Operations</a></p>
+
+    <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button">Log Out</a>
+
+{% endblock %}    

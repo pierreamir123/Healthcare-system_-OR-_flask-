@@ -1,0 +1,113 @@
+{% extends "AdminProfile.html" %}
+{% block main %}
+
+    <h1>Viewing Reservation Requests</h1>
+
+    <div class="container">
+
+    <table class="table">
+
+        <thead class="table table-success table-striped">
+
+            <tr>
+                <th scope="col" class="text-white bg-dark">Operation ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Day</th>
+                <th scope="col">Month</th>
+                <th scope="col">Year</th>
+                <th scope="col">Operation Level</th>
+                <th scope="col">Estimated Hours</th>
+                <th scope="col">Patient ID</th>
+                <th scope="col">Leading Doctor ID</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for Operation in CriticalOperations %}
+
+            <tr>
+                <th scope="row" class="text-white bg-dark">{{Operation.0}}</th>
+                <td>{{Operation.1}}</td>
+                <td>{{Operation.2}}</td>
+                <td>{{Operation.3}}</td>
+                <td>{{Operation.4}}</td>
+                <td class="text-white bg-danger">{{Operation.5}}</td>
+                <td>{{Operation.6}}</td>
+                <td>{{Operation.7}}</td>
+                <td>{{Operation.8}}</td>
+            </tr>
+
+            {% endfor %}
+
+            {% for Operation in HighOperations %}
+
+            <tr>
+                <th scope="row" class="text-white bg-dark">{{Operation.0}}</th>
+                <td>{{Operation.1}}</td>
+                <td>{{Operation.2}}</td>
+                <td>{{Operation.3}}</td>
+                <td>{{Operation.4}}</td>
+                <td class="text-white bg-primary">{{Operation.5}}</td>
+                <td>{{Operation.6}}</td>
+                <td>{{Operation.7}}</td>
+                <td>{{Operation.8}}</td>
+            </tr>
+
+            {% endfor %}
+
+            {% for Operation in MediumOperations %}
+
+            <tr>
+                <th scope="row" class="text-white bg-dark">{{Operation.0}}</th>
+                <td>{{Operation.1}}</td>
+                <td>{{Operation.2}}</td>
+                <td>{{Operation.3}}</td>
+                <td>{{Operation.4}}</td>
+                <td class="text-dark bg-warning">{{Operation.5}}</td>
+                <td>{{Operation.6}}</td>
+                <td>{{Operation.7}}</td>
+                <td>{{Operation.8}}</td>
+            </tr>
+
+            {% endfor %}
+
+            {% for Operation in LowOperations %}
+
+            <tr>
+                <th scope="row" class="text-white bg-dark">{{Operation.0}}</th>
+                <td>{{Operation.1}}</td>
+                <td>{{Operation.2}}</td>
+                <td>{{Operation.3}}</td>
+                <td>{{Operation.4}}</td>
+                <td class="text-white bg-success">{{Operation.5}}</td>
+                <td>{{Operation.6}}</td>
+                <td>{{Operation.7}}</td>
+                <td>{{Operation.8}}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+      </table>
+
+      <form class="row g-3" action="{{ url_for('ViewConfirmationResult') }}", method="POST">
+        <div class="col-auto">
+           <label for="ID" class="form-label">Enter ID of Operation You Want to Confirm</label>
+        </div>
+        <div class="col-auto">
+          <label for="OperationID" class="visually-hidden"></label>
+          <input type="number" class="form-control" id="OperationID" placeholder="Operation ID" name = OperationID>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+        </div>
+      </form>
+
+    </div>
+
+    <a href="{{ url_for('AdminProfile') }}">Back To Your Page</a>
+
+{% endblock %}    

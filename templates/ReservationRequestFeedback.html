@@ -1,0 +1,29 @@
+{% extends "DocProfile.html" %}
+{% block main %}
+
+    <h1>Reservation Request Feedback</h1>
+
+    {% if SuccessMsg1 %}
+
+    <div class="alert alert-success" role="alert">
+       <p>{{ SuccessMsg1 }}</p>
+       <p>{{ SuccessMsg2 }}</p>
+       <p>{{ SuccessMsg3 }}</p>
+        <a href="{{ url_for('DocProfile') }}" class="alert-link">Back To Your Page</a>
+    </div>
+
+    {% endif %}
+
+    {% if FailureMsg1 %}
+
+    <div class="alert alert-danger" role="alert">
+        <p>{{ FailureMsg1 }}</p>
+        <p>{{ FailureMsg2 }}</p>
+        <a href="{{ url_for('ReservationRequestFormPage') }}" class="alert-link">Enter Form Again</a>
+    </div>
+
+    {% endif %}
+
+
+
+{% endblock %}    

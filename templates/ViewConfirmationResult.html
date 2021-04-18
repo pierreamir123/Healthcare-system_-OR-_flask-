@@ -1,0 +1,46 @@
+{% extends "DocProfile.html" %}
+{% block main %}
+
+    <h1>Confirmation Result..</h1>
+
+    {% if success %}
+
+    <div class="container">
+       
+    <div class="card">
+        <h5 class="card-header">Operation Room Reservation Request was Successfully Confirmed!</h5>
+        <div class="card-body">
+          <h5 class="card-title">Confirmation Information:</h5>
+          <p class="text-success">For Operation of ID: {{OperationInfo.0}} and Type: {{OperationInfo.1}}</p>
+          <p class="text-success">The Operation will be held on {{OperationInfo.2}} / {{OperationInfo.3}} / {{OperationInfo.4}}</p>
+          <p class="text-success">From {{StartTime}}:00 and is estimated to end at {{EndTime}}:00</p>
+          <p class="text-success">In Operation Room Number: {{RoomNumber}}</p>
+          <p class="text-success">And is requested and lead by Doctor whose ID: {{OperationInfo.8}}</p>
+          <a href="{{ url_for('ViewReservationRequests') }}" class="btn btn-primary">Back To Reservation Requests</a>
+        </div>
+      </div>
+      
+    </div>
+
+    {% endif %}
+
+    {% if error %}
+
+    <div class="container">
+       
+        <div class="card">
+            <h5 class="card-header">Oops.. You entered an invalid ID!</h5>
+            <div class="card-body">
+              <h5 class="card-title">Error Message:</h5>
+              <p class="text-danger">You may have entered the Operation ID incorrectly</p>
+              <p class="text-danger">Or you entered an ID that does not exist.</p>
+              <p class="text-danger">Please Try Again!</p>
+              <a href="{{ url_for('ViewReservationRequests') }}" class="btn btn-primary">Try Again</a>
+            </div>
+          </div>
+          
+        </div>
+
+    {% endif %}
+
+{% endblock %}    
